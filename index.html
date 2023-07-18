@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Taking App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/design.css">  
+  <script type="module" src = "scripts\controllers\notes-controller.js"></script>
+  </head>
+  <body class="p-3 mb-2 bg-secondary text-dark">
+   
+    <div id = "div2" class="container">
+      <h1 class="alert alert-info text-center ">Notes Taking App</h1>
+     <div class="form-group">
+        <label >ID</label>
+        <input id = "id" class="form-control" type="text" placeholder="Type Id Here ">
+     </div>
+     <div class="form-group">
+        <label >TITLE</label>
+        <input id = "title" class="form-control" type="text" placeholder="Type Title Here">
+     </div>
+     <div class="form-group">
+        <label >DESCRIPTION</label>
+        <textarea id = "desc" class="form-control" cols="20" rows="5" placeholder="Type Description Here"></textarea>
+     </div>
+     <div class="form-group">
+        <label >COMPLETION DATE</label>
+        <input id = "cdate" class="form-control" type="date"/>
+     </div>
+     <div id = "div1" class="form-group">
+        <label >IMPORTANCE</label>
+        <input id = "importance" class="form-control" type="color"/>
+     </div>
+    <div class="p-3 mb-2 bg-light text-dark">
+      
+        <button id = "add" class="btn btn-primary">ADD</button>
+        <button id = "delete" class="btn btn-danger">DELETE</button>
+        
+        
+        <select class="btn btn-success" id = "selectbox">
+          <option value = "-1">SORT</option>
+          <option value = "id">By id</option>
+          <option value = "title">By title</option>
+          <option value = "date">By Date</option>
+        </select>
+        <!---<button id = "sort" class="btn btn-success">Sort</button>---->
+        <button id = "update" class="btn btn-warning">UPDATE</button>
+        <button id="save" class="btn btn-success">SAVE</button>
+        <button id="load" class="btn btn-secondary">LOAD</button>
+        <button id = "clr" class="btn btn-danger">CLEAR ALL</button>
+        <button class="btn btn-success">Save to Server</button>
+        <button class="btn btn-secondary">Load from server</button></br>
+        <input type = "number" id = "inp" placeholder="Enter Id">
+        <button id = "search" class="btn btn-info">Search</button>
+      </div>
+    
+    <div>
+        <h3 class="p-3 mb-2 bg-success text-dark">Total Records <span id ="total"></span> Mark Records <span id ="marktotal"></span> UnMark Records <span id ="unmarktotal"></span></h3>
+    </div>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Desc</th>
+                <th>Completion Date</th>
+                <th>Importance</th>
+                <th>Operations</th>
+               
+            </tr>
+        </thead> 
+        <tbody id = "notes">
+            <!---Dynamic Records will bw come Here--->
+        </tbody>
+    </table>
+    </div>
+  </body>
+</html>
